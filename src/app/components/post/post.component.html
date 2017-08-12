@@ -1,0 +1,15 @@
+<form class="post">
+  <div>
+    <input type="text" #tweet>
+    <button class="submitButton" (click)="createNewTweet(tweet.value); tweet.value=''">Post Tweet!</button>
+  </div>
+</form>
+
+
+<div *ngFor="let tweet of newTweets">
+  <div class="feed">
+    <img [attr.src]="tweet.image" alt="{{tweet.image}}">
+    {{tweet.username}}: ->
+    {{tweet.post}}
+  </div>
+</div>

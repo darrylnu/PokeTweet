@@ -1,0 +1,7 @@
+<div class="feed" *ngFor="let tweet of tweets?.reverse()">
+  <div>
+    <img [attr.src]="tweet.image" alt="{{tweet.image}}">
+    {{tweet.username}}: ->
+    {{tweet.post}}
+  </div>
+</div>

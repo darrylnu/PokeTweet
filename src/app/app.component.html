@@ -1,0 +1,36 @@
+<script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png"/>
+
+      <button
+        class="btn btn-primary btn-margin"
+        routerLink="/" id="home">
+        Home
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="!isAuthenticated()"
+        (click)="login()" id="Login">
+        Log In
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="isAuthenticated()"
+        (click)="logout()" id="logout">
+        Log Out
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<h1>WELCOME TO POKE-TWEET!</h1>
+
+<app-post></app-post>
+
+<app-feed></app-feed>
